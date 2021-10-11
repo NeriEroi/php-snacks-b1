@@ -203,12 +203,7 @@
                 Iusto perferendis vero, officiis in aperiam amet blanditiis autem quibusdam cum saepe quia totam illo. 
                 Adipisci nulla dolorum";
 
-                $point = "/[.]/";
-
-                $frasi = preg_split($point, $paragrafo);
-                
-                print_r($frasi);
-
+                print_r (explode(".", $paragrafo));
 
             ?>
 
