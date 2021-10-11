@@ -199,11 +199,18 @@
          
             <?php
 
-                $paragrafo = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit eveniet fugiat.
+                $paragrafo = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Reprehenderit eveniet fugiat.
                 Iusto perferendis vero, officiis in aperiam amet blanditiis autem quibusdam cum saepe quia totam illo. 
                 Adipisci nulla dolorum";
 
-                print_r (explode(".", $paragrafo));
+                // print_r (explode(".", $paragrafo));
+
+                $divisioni = explode(".", $paragrafo);
+
+                foreach ($divisioni as $key => $divisione) {
+                    echo $key . " " . $divisione . "<br/>";
+                }
 
             ?>
 
