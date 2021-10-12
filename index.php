@@ -10,6 +10,10 @@
         #Snack_Due {margin-bottom: 50px;}
         #Snack_Tre {margin-bottom: 50px;}
         #Snack_Quattro {margin-bottom: 50px;}
+        #Snack_Cinque {margin-bottom: 50px;}
+        #Snack_Sei .grigio {border: 5px solid gray;}
+        #Snack_Sei .verde {border: 5px solid green;}
+        #Snack_Sette {margin-top: 50px;}
     </style>
 </head>
 <body>
@@ -216,6 +220,89 @@
 
         </div>
         <!-- / SNACK 5  -->
+
+        <!-- SNACK 6  -->
+        <div id="Snack_Sei">SNACK SEI <br>
+         
+            <div class="grigio">
+
+                <?php
+
+                    include __DIR__ . "/database.php";
+
+                    foreach ($db as $components) {
+                        foreach ($components as $key => $teachers) {
+                            if ($key == 0)
+                            echo $teachers["name"] . " " . $teachers["lastname"];
+                        }
+                    }
+
+                ?>
+
+            </div>
+
+            <div class="verde">
+
+                <?php
+
+                    include __DIR__ . "/database.php";
+
+                    foreach ($db as $components) {
+                        foreach ($components as $key => $pm) {
+                            if ($key == 1)
+                            echo $pm["name"] . " " . $pm["lastname"];
+                        }
+                    }
+
+                ?>
+
+            </div>
+            
+
+        </div>
+        <!-- / SNACK 6  -->
+
+        <!-- SNACK 7  -->
+        <div id="Snack_Sette">SNACK SETTE
+
+        <?php
+
+            $alunni = [
+                [
+                    'nome' => 'Michele',
+                    'cognome' => 'Papagni',
+                    'voti' => [5,6,7,8],
+                ],
+                [
+                    'nome' => 'Fabio',
+                    'cognome' => 'Forghieri',
+                    'voti' => [8,8,7,8],
+                ],
+                [
+                    'nome' => 'Federico',
+                    'cognome' => 'Pellegrini',
+                    'voti' => [10,2,2,3],
+                ],
+            ];
+
+            foreach ($alunni as $alunno) {
+                echo $alunno["nome"] . " " . $alunno["cognome"] . "<br/>";
+            }
+
+            foreach ($alunni as $alunno) {
+                foreach ($alunno as $voti) {
+                    foreach ($voti as $voto) {
+                        echo $voto . " ";
+                    }
+                }
+            }
+
+            
+
+        ?>    
+
+        </div>
+        <!-- / SNACK 7  -->
 
     </div>
 </body>
