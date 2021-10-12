@@ -230,10 +230,13 @@
 
                     include __DIR__ . "/database.php";
 
-                    foreach ($db as $components) {
-                        foreach ($components as $key => $teachers) {
-                            if ($key == 0)
-                            echo $teachers["name"] . " " . $teachers["lastname"];
+                    foreach ($db as $key => $professione) {
+                        if ($key === "teachers") {
+                            foreach ($professione as $persona) {
+                                echo "<div>";
+                                echo $persona["name"] . " " . $persona["lastname"];
+                                echo "</div>";
+                            }
                         }
                     }
 
@@ -247,10 +250,13 @@
 
                     include __DIR__ . "/database.php";
 
-                    foreach ($db as $components) {
-                        foreach ($components as $key => $pm) {
-                            if ($key == 1)
-                            echo $pm["name"] . " " . $pm["lastname"];
+                    foreach ($db as $key => $professione) {
+                        if ($key === "pm") {
+                            foreach ($professione as $persona) {
+                                echo "<div>";
+                                echo $persona["name"] . " " . $persona["lastname"];
+                                echo "</div>";
+                            }
                         }
                     }
 
@@ -286,15 +292,18 @@
             ];
 
             foreach ($alunni as $alunno) {
-                echo $alunno["nome"] . " " . $alunno["cognome"] . "<br/>";
+                echo "<div>";
+                echo $alunno["nome"] . " " . $alunno["cognome"] . " " . mediavoti($alunno["voti"]) . "<br/>";
+                echo "</div>";
             }
 
-            foreach ($alunni as $alunno) {
-                foreach ($alunno as $voti) {
-                    foreach ($voti as $voto) {
-                        echo $voto . " ";
-                    }
+            function mediaVoti($array) {
+                $numeroMedia = count($array);
+                $sum = 0;
+                foreach ($array as $voto) {
+                    $sum += $voto;
                 }
+                return $sum/$numeroMedia;
             }
 
             
