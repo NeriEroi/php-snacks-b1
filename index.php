@@ -347,23 +347,37 @@
 
                 ];
 
+                // $array_ads = [];
+
+                // foreach ($ads as $ad) {
+                //     if ($ad["is_active"] === true) {
+                //         $array_ads[] = $ad;
+                //     }
+                // }
+
+                // // var_dump($array_ads);
+
+                // $currentActive = $array_ads[rand(0, count($array_ads) - 1)];
+
+                // echo $currentActive['image.path'];
+
             ?>
 
             <div>
 
                 <?php foreach($ads as $ad) { ?>
 
-                    
                     <?php if ($ad["is_active"] === true) { ?>
 
                         <img src="<?php echo $ad['image_path'] ?>" alt="">
 
                     <?php } ?>
                     
-
                 <?php } ?>
 
             </div>
+
+            
 
         </div>
         <!-- / SNACK 8  -->
